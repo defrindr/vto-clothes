@@ -1,366 +1,326 @@
-.Custom {
-    width: 100vw;
-    height: 100vh;
+/* Custom styles for the application */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
 }
 
-.padupadan{
-    font-weight: 600;
-    font-size: 29px;
-    cursor: pointer;
-    position: absolute;
-    top: 40px;
-    left: 90px;
-    transform: translateY(-50%);
-    color: #ffffff;
-}
-.kotak {
-  width: 290px; /* Atur lebar kotak */
-  height: 820px; /* Atur tinggi kotak */
-  background-color: #353B55; /* Atur warna latar belakang kotak */
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
 }
 
-.dropdown-button {
-  display: inline-block;
-  padding: 7px 50px;
-  background-color: transparent; 
-  color: #ffffff; 
-  font-size: 20px;
+/* Custom scrollbar for sidebars */
+.overflow-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Dropdown hover effects */
+.dropdown-item:hover {
+  background-color: #e9ecef;
+  color: #000;
+}
+
+/* Button hover effects */
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000;
+  border-color: #ffffff;
+}
+
+/* Card styling */
+.card {
   border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 130px;
-  right: 1290px; 
-  transform: translateY(-50%);
-  width: 210px;
-  text-align: center;
-}
-
-.dropdown-button:hover {
-  background-color: #738CF1; 
-  color: #ffffff;
-  padding: 7px 50px; 
-  border-radius: 10px; 
-}
-
-
-.dropdown-group1 {
-display: inline-block;
-  padding: 7px 15px; 
-  background-color: #007bff; 
-  color: #fff; 
-  font-size: 13px; 
-  border: none; 
   border-radius: 10px;
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
-  position: absolute;
-  top: 130px;
-  right: 80cqmax;
-  transform: translateY(-50%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-.dropdown-group2 {
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 130px;
-      right: 73cqmax;
-      transform: translateY(-50%);
-    }
-
-    .dropdown-button2{
-        display: inline-block;
-      padding: 7px 50px; 
-      background-color: transparent; 
-      color: #fff; 
-      font-size: 20px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 180px;
-      right: 1290px;
-      transform: translateY(-50%);
-      width: 210px;
-  text-align: center;
-    }
-    
-    .dropdown-button2:hover {
-      background-color: #738CF1; 
-      color: #ffffff;
-      padding: 7px 50px; 
-      border-radius: 10px; 
-    }
-
-    
-    .dropdown-group4 {
-        display: inline-block;
-          padding: 7px 15px; 
-          background-color: #007bff; 
-          color: #fff; 
-          font-size: 13px; 
-          border: none; 
-          border-radius: 10px;
-          cursor: pointer; 
-          transition: background-color 0.3s ease; 
-          position: absolute;
-          top: 180px;
-          right: 73cqmax;
-          transform: translateY(-50%);
-        }
-
-    .dropdown-group5 {
-          display: inline-block;
-          padding: 7px 15px; 
-          background-color: #007bff; 
-          color: #fff; 
-          font-size: 13px; 
-          border: none; 
-          border-radius: 10px;
-          cursor: pointer; 
-          transition: background-color 0.3s ease; 
-          position: absolute;
-          top: 230px;
-          right: 81cqmax;
-          transform: translateY(-50%);
-          }
-.dropdown-button3{
-  display: inline-block;
-  padding: 7px 50px;
-  background-color: transparent; 
-  color: #ffffff; 
-  font-size: 20px;
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
   border: none;
+}
+
+/* Form range styling */
+.form-range::-webkit-slider-thumb {
+  background: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
-  position: absolute;
-  top: 230px;
-  right: 1290px; 
-  transform: translateY(-50%);
-  width: 210px;
-  text-align: center;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  background: #0056b3;
+}
+
+.form-range::-moz-range-thumb {
+  background: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form-range::-moz-range-thumb:hover {
+  background: #0056b3;
+}
+
+/* Badge styling */
+.badge {
+  font-size: 0.75em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0;
   }
 
-  .dropdown-button3:hover {
-    background-color: #738CF1; 
-    color: #ffffff;
-    padding: 7px 50px; 
-    border-radius: 10px; 
-  }
-    .dropdown-group3 {
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 180px;
-      right: 80cqmax;
-      transform: translateY(-50%);
-    }
-
-    .dropdown-button4{
-      display: inline-block;
-      padding: 7px 50px; 
-      background-color: transparent; 
-      color: #fff; 
-      font-size: 20px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 280px;
-      right: 1290px;
-      transform: translateY(-50%);
-      width: 210px;
-  text-align: center;
+  /* Mobile layout adjustments */
+  .col-xs-12 {
+    width: 100%;
   }
 
-  .dropdown-button4:hover {
-    background-color: #738CF1; 
-    color: #ffffff;
-    padding: 7px 50px; 
-    border-radius: 10px; 
-  } 
-    .dropdown-group6{
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 280px;
-      right: 82.5cqmax;
-      transform: translateY(-50%);
-    }
-
-    .dropdown-button5{
-      display: inline-block;
-    padding: 7px 50px; 
-    background-color: transparent; 
-    color: #fff; 
-    font-size: 20px; 
-    border: none; 
-    border-radius: 10px;
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-    position: absolute;
-    top: 330px;
-    right: 1290px;
-    transform: translateY(-50%);
-    width: 210px;
-text-align: center;
-  }
-  
-  .dropdown-button5:hover {
-    background-color: #738CF1; 
-    color: #ffffff;
-    padding: 7px 50px; 
-    border-radius: 10px; 
+  /* Sidebar adjustments for mobile */
+  .bg-dark .p-3 {
+    padding: 0.75rem !important;
   }
 
-    .dropdown-group7{
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 330px;
-      right: 82cqmax;
-      transform: translateY(-50%);
-    }
-
-    .dropdown-button6{
-      display: inline-block;
-    padding: 7px 50px; 
-    background-color: transparent; 
-    color: #fff; 
-    font-size: 20px; 
-    border: none; 
-    border-radius: 10px;
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-    position: absolute;
-    top: 380px;
-    right: 1290px;
-    transform: translateY(-50%);
-    width: 210px;
-text-align: center;
-  }
-  
-  .dropdown-button6:hover {
-    background-color: #738CF1; 
-    color: #ffffff;
-    padding: 7px 50px; 
-    border-radius: 10px; 
+  /* Control panel mobile adjustments */
+  .control-panel {
+    min-width: 250px !important;
+    max-width: 95vw !important;
+    margin: 0.5rem !important;
   }
 
-    .dropdown-group8{
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 382px;
-      right: 82.8cqmax;
-      transform: translateY(-50%);
-    }
-
-    .dropdown-button7{
-      display: inline-block;
-    padding: 7px 50px; 
-    background-color: transparent; 
-    color: #fff; 
-    font-size: 20px; 
-    border: none; 
-    border-radius: 10px;
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-    position: absolute;
-    top: 430px;
-    right: 1290px;
-    transform: translateY(-50%);
-    width: 210px;
-text-align: center;
-  }
-  
-  .dropdown-button7:hover {
-    background-color: #738CF1; 
-    color: #ffffff;
-    padding: 7px 50px; 
-    border-radius: 10px; 
+  /* Button adjustments for mobile */
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 
-    .dropdown-group9{
-    display: inline-block;
-      padding: 7px 15px; 
-      background-color: #007bff; 
-      color: #fff; 
-      font-size: 13px; 
-      border: none; 
-      border-radius: 10px;
-      cursor: pointer; 
-      transition: background-color 0.3s ease; 
-      position: absolute;
-      top: 430px;
-      right: 82.3cqmax;
-      transform: translateY(-50%);
-    }
+  /* Bottom action buttons mobile layout */
+  .position-absolute.bottom-0 .d-flex {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
 
+  .position-absolute.bottom-0 .d-flex .btn {
+    width: 100%;
+    max-width: 300px;
+  }
 
-.upload-image{
-  position: absolute;
-  top: 199px;
-  right: -7cqmax;
-  transform: translateY(-50%);
-        }
+  /* Status panel mobile adjustments */
+  .border-top.bg-light .mb-2 .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.25rem;
+  }
 
-        .take-picture-button {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: #007bff;
-          color: #fff;
-          font-size: 16px;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          position: absolute;
-  top: 650px;
-  right: 170px;
-  z-index: 2;
-        }
-        
+  .border-top.bg-light .mb-2 .badge {
+    align-self: flex-end;
+    margin-left: 0 !important;
+    margin-top: -0.25rem;
+  }
+
+  /* Canvas mobile adjustments */
+  canvas {
+    border-radius: 0;
+  }
+
+  /* Sidebar mobile header */
+  .bg-secondary .d-flex.justify-content-between {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Product buttons mobile */
+  .d-grid.gap-2 .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small screens */
+  .control-panel {
+    min-width: 220px !important;
+    margin: 0.25rem !important;
+  }
+
+  .control-panel .card-body {
+    padding: 0.75rem !important;
+  }
+
+  /* Hide some text on very small screens */
+  .d-none.d-sm-inline {
+    display: none !important;
+  }
+
+  /* Adjust sidebar padding */
+  .grow.p-3 {
+    padding: 0.5rem !important;
+  }
+
+  /* Product selection mobile */
+  .d-grid.gap-2.mb-3 {
+    gap: 0.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Medium screens and up */
+@media (min-width: 768px) {
+  .col-md-3 {
+    width: 25%;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 992px) {
+  .col-lg-3 {
+    width: 25%;
+  }
+
+  .col-lg-6 {
+    width: 50%;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    width: 25%;
+  }
+
+  .col-xl-6 {
+    width: 50%;
+  }
+}
+
+/* Animation for camera activation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-active {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Custom button group styling */
+.btn-group .btn {
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  border-radius: 25px 0 0 25px;
+}
+
+.btn-group .btn:last-child {
+  border-radius: 0 25px 25px 0;
+}
+
+/* Status indicator styling */
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.status-active {
+  background-color: #28a745;
+  box-shadow: 0 0 4px rgba(40, 167, 69, 0.4);
+}
+
+.status-inactive {
+  background-color: #6c757d;
+}
+
+.status-warning {
+  background-color: #ffc107;
+  box-shadow: 0 0 4px rgba(255, 193, 7, 0.4);
+}
+
+/* Canvas styling */
+canvas {
+  border-radius: 8px;
+}
+
+/* Sidebar header styling */
+.sidebar-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Product selection cards */
+.product-card {
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Control panel styling */
+.control-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+/* Success animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.success-animation {
+  animation: bounce 1s ease;
+}
+
+/* Sketch picker customization */
+.sketch-picker {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+/* Dashed border utility */
+.border-dashed {
+  border-style: dashed !important;
+}
