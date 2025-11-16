@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: #ffffff;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.configurator_section_title {
+  font-size: 14 px;
+  cursor: pointer;
+  font-weight: 600;
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  transform: translateY(-50%);
+    
+    
+}
+
+.configurator_section_values{
+  position: absolute;
+  top: 100px;
+  right: 225px;
+  
+}
+
+.color-picker-container {
+  position: absolute;
+  top: 380px;
+  left: -8cqmax;
+  transform: translateY(-50%);
+}
+
+/* Style untuk button */
+.button1 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+  margin-right: 35px;
+  
+}
+
+/* Style untuk button saat dihover */
+.button1:hover {
+  background-color: #0056b3; 
+}
+
+.button2 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 15px;
+  right: -3cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button2:hover {
+  background-color: #0056b3; 
+}
+
+.button3 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 15px;
+  right: -7.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button3:hover {
+  background-color: #0056b3; 
+}
+
+.button4 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 52px;
+  right: 1.8cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button4:hover {
+  background-color: #0056b3; 
+}
+
+.button5 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 52px;
+  right: -3.8cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button5:hover {
+  background-color: #0056b3; 
+}
+
+.button6 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 52px;
+  right: -7.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button6:hover {
+  background-color: #0056b3; 
+}
+
+.button7 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 88px;
+  right: 5.3cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button7:hover {
+  background-color: #0056b3; 
+}
+
+.button8 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 88px;
+  right: 0.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button8:hover {
+  background-color: #0056b3; 
+}
+
+.button9 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 89px;
+  right: -3.4cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button9:hover {
+  background-color: #0056b3; 
+}
+
+.button10 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 89px;
+  right: -7.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button10:hover {
+  background-color: #0056b3; 
+}
+
+.button11 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 127px;
+  right: 4.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button11:hover {
+  background-color: #0056b3; 
+}
+
+.button12 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 127px;
+  right: 1.5cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button12:hover {
+  background-color: #0056b3; 
+}
+
+.button13 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 127px;
+  right: -4.1cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button13:hover {
+  background-color: #0056b3; 
+}
+
+.button14 {
+  display: inline-block;
+  padding: 7px 7px; 
+  background-color: #007bff; 
+  color: #fff; 
+  font-size: 13px; 
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  position: absolute;
+  top: 165px;
+  right: 4cqmax;
+  transform: translateY(-50%);
+  
+}
+
+/* Style untuk button saat dihover */
+.button14:hover {
+  background-color: #0056b3; 
+}

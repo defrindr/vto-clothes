@@ -1,0 +1,269 @@
+.inspiration {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: #ffffff;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .cari {
+    width: 1450px; 
+    height: 34px; 
+    background-color: #353B55; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 23px; 
+    position: absolute; 
+    top: 70px;  
+    left: 48.5%;
+    transform: translateX(-50%);
+  }
+
+  .lingkaran4 {
+    position: absolute;
+    top: 80%;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #F0C3F3, rgba(255,192,203,0) 70%);
+    z-index: -1;
+  }
+
+.lingkaran5 {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #D8EBFF, rgba(255,192,203,0) 70%);
+    z-index: -1;
+  }
+
+.page1 {
+ width: 329px; 
+ height: 329px; 
+ background-color: #e1e1e1; 
+ padding: 20px; 
+ margin: 20px; 
+ border-radius: 23px; 
+ position: absolute; 
+ top: 130px; 
+ left: 12%; 
+ transform: translateX(-50%);
+ z-index: -1;
+  }
+
+  .page2 {
+    width: 329px; 
+    height: 329px; 
+    background-color: #e1e1e1; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 23px; 
+    position: absolute; 
+    top: 130px; 
+    left: 36.5%; 
+    transform: translateX(-50%);
+    z-index: -1;
+     }
+
+.page3 {
+width: 329px; 
+height: 329px; 
+background-color: #e1e1e1; 
+padding: 20px; 
+margin: 20px; 
+border-radius: 23px; 
+position: absolute; 
+top: 130px; 
+left: 60.5%; 
+transform: translateX(-50%);
+z-index: -1;
+}
+
+.page4 {
+    width: 329px; 
+    height: 329px; 
+    background-color: #e1e1e1; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 23px; 
+    position: absolute; 
+    top: 130px; 
+    left: 84.5%; 
+    transform: translateX(-50%);
+    z-index: -1;
+    }
+
+    .page5 {
+        width: 329px; 
+        height: 329px; 
+        background-color: #e1e1e1; 
+        padding: 20px; 
+        margin: 20px; 
+        border-radius: 23px; 
+        position: absolute; 
+        top: 495px; 
+        left: 12%; 
+        transform: translateX(-50%);
+        z-index: -1;
+         }
+       
+         .page6 {
+           width: 329px; 
+           height: 329px; 
+           background-color: #e1e1e1; 
+           padding: 20px; 
+           margin: 20px; 
+           border-radius: 23px; 
+           position: absolute; 
+           top: 495px; 
+           left: 36.5%; 
+           transform: translateX(-50%);
+           z-index: -1;
+            }
+       
+       .page7 {
+       width: 329px; 
+       height: 329px; 
+       background-color: #e1e1e1; 
+       padding: 20px; 
+       margin: 20px; 
+       border-radius: 23px; 
+       position: absolute; 
+       top: 495px; 
+       left: 60.5%; 
+       transform: translateX(-50%);
+       z-index: -1;
+       }
+       
+       .page8 {
+           width: 329px; 
+           height: 329px; 
+           background-color: #e1e1e1; 
+           padding: 20px; 
+           margin: 20px; 
+           border-radius: 23px; 
+           position: absolute; 
+           top: 495px; 
+           left: 84.5%; 
+           transform: translateX(-50%);
+           z-index: -1;
+           }
+  
+           .page9 {
+            width: 329px; 
+            height: 329px; 
+            background-color: #e1e1e1; 
+            padding: 20px; 
+            margin: 20px; 
+            border-radius: 23px; 
+            position: absolute; 
+            top: 860px; 
+            left: 12%; 
+            transform: translateX(-50%);
+            z-index: -1;
+             }
+           
+             .page10 {
+               width: 329px; 
+               height: 329px; 
+               background-color: #e1e1e1; 
+               padding: 20px; 
+               margin: 20px; 
+               border-radius: 23px; 
+               position: absolute; 
+               top: 860px; 
+               left: 36.5%; 
+               transform: translateX(-50%);
+               z-index: -1;
+                }
+           
+           .page11 {
+           width: 329px; 
+           height: 329px; 
+           background-color: #e1e1e1; 
+           padding: 20px; 
+           margin: 20px; 
+           border-radius: 23px; 
+           position: absolute; 
+           top: 860px; 
+           left: 60.5%; 
+           transform: translateX(-50%);
+           z-index: -1;
+           }
+           
+           .page12 {
+               width: 329px; 
+               height: 329px; 
+               background-color: #e1e1e1; 
+               padding: 20px; 
+               margin: 20px; 
+               border-radius: 23px; 
+               position: absolute; 
+               top: 860px; 
+               left: 84.5%; 
+               transform: translateX(-50%);
+               z-index: -1;
+               }
+  .kotakbawah {
+            width: 2520px; 
+            height: 232px; 
+            background-color: #353B55; 
+            padding: 20px; 
+            margin: 20px; 
+            position: absolute; 
+            top: 1300px; 
+            left: 16.5%; 
+            transform: translateX(-50%);
+          }
+
+          .footer1{
+            position: absolute; 
+            top: 1350px; 
+            left: 60px; 
+            transform: translateX(-50%); 
+            width: 30px; 
+            height: auto;
+          }
+          
+          .footer_logoteks1 {
+            position: absolute; 
+            top: 1350px; 
+            left: 90px; 
+            font-size: 25px; 
+            font-weight: 700;
+            color: #ffffff;
+          }
+          
+          .nav_footer1 {
+            position: absolute; 
+            top: 1340px; 
+            left: 600px; 
+            color: #ffffff !important;
+          }
+          
+          .nav_footer1 ul {
+            list-style-type: none;
+          }
+          
+          .nav_footer1 li {
+            color: inherit; 
+          }
+          
+          .nav_footer1 a {
+            color: inherit; 
+            text-decoration: none; 
+          }
+          
+          .copyright1{
+            position: absolute; 
+            top: 1510px; 
+            left: 90%; 
+            color: #cccccc !important;
+            font-size: 13px;
+          }
