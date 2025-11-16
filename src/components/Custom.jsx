@@ -103,13 +103,14 @@ const Custom = () => {
   return (
     <CustomizationalProvider>
       {/* Header */}
-      <NavbarComponent />
+      {!cameraActive && <NavbarComponent />}
 
       {/* Main Layout */}
-      <Container fluid className="vh-100 overflow-hidden bg-light">
+      <Container fluid className={`vw-100 overflow-hidden bg-light ${cameraActive ? 'vh-100' : 'vh-100'}`} style={cameraActive ? {marginTop: '0'} : {}}>
         <Row className="h-100">
           {/* Sidebar Kiri - Product Selection */}
-          <Col xs={12} sm={4} md={3} lg={3} xl={3} className="bg-dark text-white p-0 d-flex flex-column order-2 order-md-1">
+          {!cameraActive && (
+            <Col xs={12} sm={4} md={3} lg={3} xl={3} className="bg-dark text-white p-0 d-flex flex-column order-2 order-md-1">
             <div className="p-3 p-md-4 border-bottom d-none d-sm-block">
               <h3 className="mb-0 text-center h5 h-md-3">
                 <i className="fas fa-tshirt me-2"></i>
@@ -255,9 +256,37 @@ const Custom = () => {
               </div>
             </div>
           </Col>
+          )}
 
           {/* Main Content - 3D Canvas */}
-          <Col xs={12} sm={8} md={6} lg={6} xl={6} className="p-0 position-relative order-1 order-md-2">
+          <Col xs={12} sm={cameraActive ? 12 : 8} md={cameraActive ? 12 : 6} lg={cameraActive ? 12 : 6} xl={cameraActive ? 12 : 6} className="p-0 position-relative order-1 order-md-2">
+            {/* Action Buttons - Top Center */}
+            <div className="position-absolute top-0 start-50 translate-middle-x mt-3 mt-md-4" style={{ zIndex: 4 }}>
+              <div className="d-flex gap-2 gap-md-3">
+                <Button
+                  variant={cameraActive ? "outline-danger" : "success"}
+                  size="lg"
+                  onClick={() => setCameraActive(!cameraActive)}
+                  className="px-3 px-md-4 py-2 shadow"
+                >
+                  <i className={`fas fa-${cameraActive ? 'stop' : 'camera'} me-2`}></i>
+                  <span className="d-none d-sm-inline">{cameraActive ? 'Stop Try On' : 'Try On'}</span>
+                  <span className="d-sm-none">{cameraActive ? 'Stop' : 'Try On'}</span>
+                </Button>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => setTakeScreenshot(true)}
+                  disabled={!cameraActive}
+                  className="px-3 px-md-4 py-2 shadow"
+                >
+                  <i className="fas fa-camera me-2"></i>
+                  <span className="d-none d-sm-inline">Take Picture</span>
+                  <span className="d-sm-none">Photo</span>
+                </Button>
+              </div>
+            </div>
+
             {/* 3D Canvas Container */}
             <div className="position-absolute top-0 start-0 w-100 h-100">
               {/* Video Overlay */}
@@ -296,9 +325,9 @@ const Custom = () => {
                   rotation={[Math.PI / 8, Math.PI / 4, 0]}
                 >
                   <Stage environment="city" intensity={0.6} castShadow={false}>
-                    <group scale={modelScale}>
+                    <mesh scale={modelScale} position={[modelPosition[0], modelPosition[1], modelPosition[2]]}>
                       {getCurrentObjectComponent()}
-                    </group>
+                    </mesh>
                   </Stage>
                 </PresentationControls>
               </Canvas>
@@ -380,36 +409,11 @@ const Custom = () => {
               </Card>
             )}
 
-            {/* Bottom Action Buttons - Responsive */}
-            <div className="position-absolute bottom-0 start-0 w-100 p-2 p-md-3" style={{ zIndex: 3 }}>
-              <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-md-3">
-                <Button
-                  variant={cameraActive ? "outline-danger" : "success"}
-                  size="lg"
-                  onClick={() => setCameraActive(!cameraActive)}
-                  className="px-3 px-md-4 py-2"
-                >
-                  <i className={`fas fa-${cameraActive ? 'stop' : 'camera'} me-2`}></i>
-                  <span className="d-none d-sm-inline">{cameraActive ? 'Stop Camera' : 'Start Camera'}</span>
-                  <span className="d-sm-none">{cameraActive ? 'Stop' : 'Camera'}</span>
-                </Button>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => setTakeScreenshot(true)}
-                  className="px-3 px-md-4 py-2"
-                  disabled={!cameraActive}
-                >
-                  <i className="fas fa-camera me-2"></i>
-                  <span className="d-none d-sm-inline">Take Picture</span>
-                  <span className="d-sm-none">Photo</span>
-                </Button>
-              </div>
-            </div>
           </Col>
 
           {/* Sidebar Kanan - Configurator */}
-          <Col xs={12} sm={12} md={3} lg={3} xl={3} className="bg-white p-0 d-flex flex-column border-start order-3">
+          {!cameraActive && (
+            <Col xs={12} sm={12} md={3} lg={3} xl={3} className="bg-white p-0 d-flex flex-column border-start order-3">
             <div className="p-3 p-md-4 border-bottom bg-light">
               <h5 className="mb-0 h6 h-md-5">
                 <i className="fas fa-palette me-2"></i>
@@ -447,6 +451,7 @@ const Custom = () => {
               </div>
             </div>
           </Col>
+          )}
         </Row>
       </Container>
     </CustomizationalProvider>
