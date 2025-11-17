@@ -22,7 +22,9 @@ const Custom = () => {
   const [cameraActive, setCameraActive] = useState(false);
   const [modelScale, setModelScale] = useState(1);
   const [modelPosition, setModelPosition] = useState([0, 0, 0]);
-  const [bodyDetected, setBodyDetected] = useState(false);
+  const [bodyDetected] = useState(false);
+
+  const { takeScreenshot: shouldTakeScreenshot, setTakeScreenshot } = useCustomization();
 
   const handleObjectChange = (selectedObject) => {
     setCurrentObject(selectedObject);
@@ -53,17 +55,16 @@ const Custom = () => {
     }
   };
 
-  const { takeScreenshot: shouldTakeScreenshot, setTakeScreenshot } = useCustomization();
+  const modelRef = useRef();
   const canvasRef = useRef();
   const videoRef = useRef();
 
-  const handleBodyDetected = (bodyPoints) => {
-    if (bodyPoints && bodyPoints.width) {
-      const newScale = bodyPoints.width / 200;
-      setModelScale(Math.min(Math.max(newScale, 0.5), 2));
-      setBodyDetected(true);
+  // Update model position when controls change
+  useEffect(() => {
+    if (modelRef.current) {
+      modelRef.current.position.set(modelPosition[0], modelPosition[1], modelPosition[2]);
     }
-  };
+  }, [modelPosition]);
 
   useEffect(() => {
     if (shouldTakeScreenshot) {
@@ -102,8 +103,8 @@ const Custom = () => {
 
   return (
     <CustomizationalProvider>
-      {/* Header */}
-      <NavbarComponent />
+      {/* Header - Hidden during try-on */}
+      {!cameraActive && <NavbarComponent />}
 
       {/* Main Layout */}
       <Container fluid className="vh-100 vw-100 overflow-hidden bg-light">
@@ -325,9 +326,12 @@ const Custom = () => {
                   rotation={[Math.PI / 8, Math.PI / 4, 0]}
                 >
                   <Stage environment="city" intensity={0.6} castShadow={false}>
-                    <group scale={modelScale}>
+                    <mesh 
+                      ref={modelRef}
+                      scale={modelScale}
+                    >
                       {getCurrentObjectComponent()}
-                    </group>
+                    </mesh>
                   </Stage>
                 </PresentationControls>
               </Canvas>
