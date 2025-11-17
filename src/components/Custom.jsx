@@ -1,21 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Canvas } from "@react-three/fiber";
 import { PresentationControls, Stage } from "@react-three/drei";
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import Configurator from "./Configurator";
+import { Canvas } from "@react-three/fiber";
+import { useEffect, useRef, useState } from 'react';
+import { Badge, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { CustomizationalProvider, useCustomization } from '../contexts/Customization';
-import Femaleshirt from "./Femaleshirt";
-import Maleshirt from "./Maleshirt";
-import Maletshirt from "./Maletshirt";
-import Femaletshirt from './Femaletshirt';
-import Malesuit from './Malesuit';
-import Dress from './Dress';
 import Blouse from './Blouse';
-import Skirt from './Skirt';
-import Pants from './Pants';
-import NavbarComponent from './Navbar';
-import { takeScreenshot } from "./screenshotHelper";
+import Configurator from "./Configurator";
 import './Custom.css';
+import Dress from './Dress';
+import Femaleshirt from "./Femaleshirt";
+import Femaletshirt from './Femaletshirt';
+import Maleshirt from "./Maleshirt";
+import Malesuit from './Malesuit';
+import Maletshirt from "./Maletshirt";
+import NavbarComponent from './Navbar';
+import Pants from './Pants';
+import { takeScreenshot } from "./screenshotHelper";
+import Skirt from './Skirt';
 
 const Custom = () => {
   const [currentObject, setCurrentObject] = useState('femaleshirt');
@@ -103,159 +103,159 @@ const Custom = () => {
   return (
     <CustomizationalProvider>
       {/* Header */}
-      {!cameraActive && <NavbarComponent />}
+      <NavbarComponent />
 
       {/* Main Layout */}
-      <Container fluid className={`vw-100 overflow-hidden bg-light ${cameraActive ? 'vh-100' : 'vh-100'}`} style={cameraActive ? {marginTop: '0'} : {}}>
+      <Container fluid className="vh-100 vw-100 overflow-hidden bg-light">
         <Row className="h-100">
           {/* Sidebar Kiri - Product Selection */}
           {!cameraActive && (
             <Col xs={12} sm={4} md={3} lg={3} xl={3} className="bg-dark text-white p-0 d-flex flex-column order-2 order-md-1">
-            <div className="p-3 p-md-4 border-bottom d-none d-sm-block">
-              <h3 className="mb-0 text-center h5 h-md-3">
-                <i className="fas fa-tshirt me-2"></i>
-                Padupadan
-              </h3>
-              <p className="text-muted small text-center mt-1 d-none d-md-block">Virtual Try-On</p>
-            </div>
-
-            {/* Mobile Header */}
-            <div className="p-3 border-bottom d-sm-none bg-secondary">
-              <div className="d-flex justify-content-between align-items-center">
-                <h5 className="mb-0">
+              <div className="p-3 p-md-4 border-bottom d-none d-sm-block">
+                <h3 className="mb-0 text-center h5 h-md-3">
                   <i className="fas fa-tshirt me-2"></i>
-                  Products
+                  Padupadan
+                </h3>
+                <p className="text-muted small text-center mt-1 d-none d-md-block">Virtual Try-On</p>
+              </div>
+
+              {/* Mobile Header */}
+              <div className="p-3 border-bottom d-sm-none bg-secondary">
+                <div className="d-flex justify-content-between align-items-center">
+                  <h5 className="mb-0">
+                    <i className="fas fa-tshirt me-2"></i>
+                    Products
+                  </h5>
+                  <Badge bg="primary" className="fs-6">
+                    {currentObject.replace(/([A-Z])/g, ' $1').trim()}
+                  </Badge>
+                </div>
+              </div>
+
+              <div className="grow p-3 overflow-auto">
+                <h5 className="mb-3 d-none d-sm-block">
+                  <i className="fas fa-list me-2"></i>
+                  Choose Product
                 </h5>
-                <Badge bg="primary" className="fs-6">
+
+                {/* Product Categories */}
+                <div className="mb-4">
+                  <h6 className="text-light mb-2 d-none d-sm-block">
+                    <i className="fas fa-shirt me-2"></i>
+                    Tops
+                  </h6>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button
+                      variant={currentObject === 'femaleshirt' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('femaleshirt')}
+                      className="text-start"
+                    >
+                      👩 Female Shirt
+                    </Button>
+                    <Button
+                      variant={currentObject === 'maleshirt' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('maleshirt')}
+                      className="text-start"
+                    >
+                      👨 Male Shirt
+                    </Button>
+                    <Button
+                      variant={currentObject === 'maletshirt' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('maletshirt')}
+                      className="text-start"
+                    >
+                      👨 Male T-Shirt
+                    </Button>
+                    <Button
+                      variant={currentObject === 'femaletshirt' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('femaletshirt')}
+                      className="text-start"
+                    >
+                      👩 Female T-Shirt
+                    </Button>
+                    <Button
+                      variant={currentObject === 'blouse' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('blouse')}
+                      className="text-start"
+                    >
+                      👚 Blouse
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h6 className="text-light mb-2 d-none d-sm-block">
+                    <i className="fas fa-user-tie me-2"></i>
+                    Formal Wear
+                  </h6>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button
+                      variant={currentObject === 'malesuit' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('malesuit')}
+                      className="text-start"
+                    >
+                      👨 Male Suit
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h6 className="text-light mb-2 d-none d-sm-block">
+                    <i className="fas fa-female me-2"></i>
+                    Dresses & Skirts
+                  </h6>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button
+                      variant={currentObject === 'dress' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('dress')}
+                      className="text-start"
+                    >
+                      👗 Dress
+                    </Button>
+                    <Button
+                      variant={currentObject === 'skirt' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('skirt')}
+                      className="text-start"
+                    >
+                      👗 Skirt
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h6 className="text-light mb-2 d-none d-sm-block">
+                    <i className="fas fa-socks me-2"></i>
+                    Bottoms
+                  </h6>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button
+                      variant={currentObject === 'pants' ? 'primary' : 'outline-light'}
+                      size="sm"
+                      onClick={() => handleObjectChange('pants')}
+                      className="text-start"
+                    >
+                      👖 Pants
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Current Selection Indicator - Desktop */}
+              <div className="p-3 border-top bg-secondary d-none d-sm-block">
+                <small className="text-muted">Current Selection:</small>
+                <div className="fw-bold text-uppercase">
                   {currentObject.replace(/([A-Z])/g, ' $1').trim()}
-                </Badge>
-              </div>
-            </div>
-
-            <div className="grow p-3 overflow-auto">
-              <h5 className="mb-3 d-none d-sm-block">
-                <i className="fas fa-list me-2"></i>
-                Choose Product
-              </h5>
-
-              {/* Product Categories */}
-              <div className="mb-4">
-                <h6 className="text-light mb-2 d-none d-sm-block">
-                  <i className="fas fa-shirt me-2"></i>
-                  Tops
-                </h6>
-                <div className="d-grid gap-2 mb-3">
-                  <Button
-                    variant={currentObject === 'femaleshirt' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('femaleshirt')}
-                    className="text-start"
-                  >
-                    👩 Female Shirt
-                  </Button>
-                  <Button
-                    variant={currentObject === 'maleshirt' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('maleshirt')}
-                    className="text-start"
-                  >
-                    👨 Male Shirt
-                  </Button>
-                  <Button
-                    variant={currentObject === 'maletshirt' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('maletshirt')}
-                    className="text-start"
-                  >
-                    👨 Male T-Shirt
-                  </Button>
-                  <Button
-                    variant={currentObject === 'femaletshirt' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('femaletshirt')}
-                    className="text-start"
-                  >
-                    👩 Female T-Shirt
-                  </Button>
-                  <Button
-                    variant={currentObject === 'blouse' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('blouse')}
-                    className="text-start"
-                  >
-                    👚 Blouse
-                  </Button>
                 </div>
               </div>
-
-              <div className="mb-4">
-                <h6 className="text-light mb-2 d-none d-sm-block">
-                  <i className="fas fa-user-tie me-2"></i>
-                  Formal Wear
-                </h6>
-                <div className="d-grid gap-2 mb-3">
-                  <Button
-                    variant={currentObject === 'malesuit' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('malesuit')}
-                    className="text-start"
-                  >
-                    👨 Male Suit
-                  </Button>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h6 className="text-light mb-2 d-none d-sm-block">
-                  <i className="fas fa-female me-2"></i>
-                  Dresses & Skirts
-                </h6>
-                <div className="d-grid gap-2 mb-3">
-                  <Button
-                    variant={currentObject === 'dress' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('dress')}
-                    className="text-start"
-                  >
-                    👗 Dress
-                  </Button>
-                  <Button
-                    variant={currentObject === 'skirt' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('skirt')}
-                    className="text-start"
-                  >
-                    👗 Skirt
-                  </Button>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h6 className="text-light mb-2 d-none d-sm-block">
-                  <i className="fas fa-socks me-2"></i>
-                  Bottoms
-                </h6>
-                <div className="d-grid gap-2 mb-3">
-                  <Button
-                    variant={currentObject === 'pants' ? 'primary' : 'outline-light'}
-                    size="sm"
-                    onClick={() => handleObjectChange('pants')}
-                    className="text-start"
-                  >
-                    👖 Pants
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Current Selection Indicator - Desktop */}
-            <div className="p-3 border-top bg-secondary d-none d-sm-block">
-              <small className="text-muted">Current Selection:</small>
-              <div className="fw-bold text-uppercase">
-                {currentObject.replace(/([A-Z])/g, ' $1').trim()}
-              </div>
-            </div>
-          </Col>
+            </Col>
           )}
 
           {/* Main Content - 3D Canvas */}
@@ -325,9 +325,9 @@ const Custom = () => {
                   rotation={[Math.PI / 8, Math.PI / 4, 0]}
                 >
                   <Stage environment="city" intensity={0.6} castShadow={false}>
-                    <mesh scale={modelScale} position={[modelPosition[0], modelPosition[1], modelPosition[2]]}>
+                    <group scale={modelScale}>
                       {getCurrentObjectComponent()}
-                    </mesh>
+                    </group>
                   </Stage>
                 </PresentationControls>
               </Canvas>
@@ -414,43 +414,43 @@ const Custom = () => {
           {/* Sidebar Kanan - Configurator */}
           {!cameraActive && (
             <Col xs={12} sm={12} md={3} lg={3} xl={3} className="bg-white p-0 d-flex flex-column border-start order-3">
-            <div className="p-3 p-md-4 border-bottom bg-light">
-              <h5 className="mb-0 h6 h-md-5">
-                <i className="fas fa-palette me-2"></i>
-                <span className="d-none d-sm-inline">Customization</span>
-                <span className="d-sm-none">Customize</span>
-              </h5>
-              <small className="text-muted d-none d-md-block">Adjust colors & materials</small>
-            </div>
+              <div className="p-3 p-md-4 border-bottom bg-light">
+                <h5 className="mb-0 h6 h-md-5">
+                  <i className="fas fa-palette me-2"></i>
+                  <span className="d-none d-sm-inline">Customization</span>
+                  <span className="d-sm-none">Customize</span>
+                </h5>
+                <small className="text-muted d-none d-md-block">Adjust colors & materials</small>
+              </div>
 
-            <div className="grow overflow-auto p-3">
-              <Configurator />
-            </div>
+              <div className="grow overflow-auto p-3">
+                <Configurator />
+              </div>
 
-            {/* Status Panel - Responsive */}
-            <div className="p-2 p-md-3 border-top bg-light">
-              <div className="mb-2">
-                <div className="d-flex justify-content-between align-items-center mb-2">
-                  <small className="text-muted fw-bold">Camera:</small>
-                  <Badge bg={cameraActive ? "success" : "secondary"} className="ms-2">
-                    {cameraActive ? "On" : "Off"}
-                  </Badge>
-                </div>
-                <div className="d-flex justify-content-between align-items-center mb-2">
-                  <small className="text-muted fw-bold">Body:</small>
-                  <Badge bg={bodyDetected ? "success" : "warning"} className="ms-2">
-                    {bodyDetected ? "Yes" : "No"}
-                  </Badge>
-                </div>
-                <div className="d-flex justify-content-between align-items-center">
-                  <small className="text-muted fw-bold">Model:</small>
-                  <Badge bg="info" className="ms-2 text-truncate" style={{maxWidth: '100px'}}>
-                    {currentObject}
-                  </Badge>
+              {/* Status Panel - Responsive */}
+              <div className="p-2 p-md-3 border-top bg-light">
+                <div className="mb-2">
+                  <div className="d-flex justify-content-between align-items-center mb-2">
+                    <small className="text-muted fw-bold">Camera:</small>
+                    <Badge bg={cameraActive ? "success" : "secondary"} className="ms-2">
+                      {cameraActive ? "On" : "Off"}
+                    </Badge>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center mb-2">
+                    <small className="text-muted fw-bold">Body:</small>
+                    <Badge bg={bodyDetected ? "success" : "warning"} className="ms-2">
+                      {bodyDetected ? "Yes" : "No"}
+                    </Badge>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <small className="text-muted fw-bold">Model:</small>
+                    <Badge bg="info" className="ms-2 text-truncate" style={{ maxWidth: '100px' }}>
+                      {currentObject}
+                    </Badge>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Col>
+            </Col>
           )}
         </Row>
       </Container>
