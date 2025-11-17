@@ -68,7 +68,7 @@ const Custom = () => {
 
   useEffect(() => {
     if (shouldTakeScreenshot) {
-      takeScreenshot(canvasRef);
+      takeScreenshot(canvasRef, videoRef);
       setTakeScreenshot(false);
     }
   }, [shouldTakeScreenshot, setTakeScreenshot]);
